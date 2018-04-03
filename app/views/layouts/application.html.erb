@@ -3,12 +3,28 @@
   <head>
     <title>RailsBlog</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/blogs/top">TOP</a></li>
+          <li><a href="/blogs/new">CREATE</a></li>
+          <li><a href="/blogs">LIST</a></li>
+        </ul>
+      </nav>
+    </header>
+
     <%= yield %>
+
+    <footer>
+      <p>Create@Yonekawa</p>
+    </footer>
+
   </body>
 </html>

@@ -1,0 +1,54 @@
+
+
+.top_image {
+  padding-bottom: 50%;
+  width: 100%;
+  background-size: cover;
+  background-image: url("/assets/topimage.jpg");
+  background-attachment: fixed;
+}
+
+.about {
+  padding: 80px;
+  font-size: 1.2vw;
+  background-color: #EEEEEE;
+}
+
+.about h1{
+  margin-top: 0;
+}
+
+.about_contents {
+  margin-top: 30px;
+}
+
+.toppage_to_center {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.function {
+  padding: 80px;
+  background-color: white;
+}
+
+.function h1 {
+  margin-top: 0;
+}
+
+.function_images{
+  width: 100%;
+  display: table;
+  margin-top: 60px;
+  table-layout: fixed;
+}
+
+.function_images p {
+  font-size: 1.4vw;
+  margin-top: 20px;
+}
+
+.function-image {
+  display: table-cell;
+  width: 100%;
+}
