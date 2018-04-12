@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to: 'blogs#index'
   resources :blogs do
     collection do
@@ -6,4 +7,7 @@ Rails.application.routes.draw do
       get :top
     end
   end
+
+  resources :users, only: [:new, :create, :show]
+  resources :sessions, only: [:new, :create, :destroy]
 end

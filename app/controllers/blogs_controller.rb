@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :user, only: [:new, :edit, :show]
 
   def index
     @blogs = Blog.all.order(created_at: :desc)
@@ -61,5 +62,9 @@ class BlogsController < ApplicationController
 
   def set_blog
     @blog = Blog.find(params[:id])
+  end
+
+  def user
+    redirect_to new_session_path if current_user.nil?
   end
 end
