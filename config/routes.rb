@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'blogs#index'
+  root to: 'blogs#top'
   resources :blogs do
     collection do
       post :confirm
@@ -10,6 +10,5 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create, :destroy]
-
   resources :favorites, only: [:create, :destroy]
 end
