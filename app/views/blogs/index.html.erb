@@ -27,8 +27,8 @@
               <%= link_to 'Destroy', blog_path(blog.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
             <% end %>
           <% end %>
-          <% user = @users.find(blog.user_id) %>
-          <div>投稿したユーザー:<%= user.name %></div>
+          <% post_user = blog.user %>
+          <div>投稿したユーザー:<%= post_user.try!(:name) %></div>
         </div>
 
       </div>
