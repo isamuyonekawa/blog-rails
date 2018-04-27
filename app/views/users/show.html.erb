@@ -25,8 +25,7 @@
       <p><%= blog.created_at %></p>
 
       <div>
-        <% blog_created_user = @users.find(blog.user_id) %>
-        投稿したユーザー:<%= blog_created_user.name %>
+        投稿したユーザー:<%= blog.user.name %>
       </div>
     </div>
     <% end %>
