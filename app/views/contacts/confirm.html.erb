@@ -1,0 +1,28 @@
+
+<h1>以下の内容で送信する</h1>
+
+<%= form_with(model: @contact, url: contacts_path, local: true) do |f| %>
+  <%= f.hidden_field :name %>
+  <%= f.hidden_field :email %>
+  <%= f.hidden_field :content %>
+
+  <div class="contact_form">
+    <p>タイトル</p>
+    <div><%= @contact.name %></div>
+    <p>メールアドレス</p>
+    <div><%= @contact.email %></div>
+    <p>内容</p>
+    <div><%= @contact.content %></div>
+
+    <div><%= f.submit '送信する'%></div>
+  </div>
+<% end %>
+
+<%= form_with(model: @contact, url: new_contact_path, local: true, method: 'get') do |f| %>
+  <%= f.hidden_field :name %>
+  <%= f.hidden_field :email %>
+  <%= f.hidden_field :content %>
+  <div>
+    <%= f.submit 'もどる', name: 'back'%>
+  </div>
+<% end %>

@@ -1,0 +1,39 @@
+
+<h1>お問い合わせ</h1>
+
+<%= form_with(model: @contact, local: true, url: confirm_contacts_path) do |f| %>
+
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+        <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </div>
+
+    <div>
+      <%= f.label :content %>
+      <%=f.text_area :content %>
+    </div>
+
+    <div>
+      <%= f.submit '送信する', class: "btn btn-default" %>
+    </div>
+
+
+<% end %>

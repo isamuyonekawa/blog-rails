@@ -16,6 +16,7 @@
           <li><a href="/blogs/top">TOP</a></li>
           <li><a href="/blogs/new">CREATE</a></li>
           <li><a href="/blogs">LIST</a></li>
+          <li><a href="/contacts/new">CONTACT</a></li>
           <% if logged_in? %>
             <li><%= link_to "Profile", user_path(current_user.id) %></li>
             <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
