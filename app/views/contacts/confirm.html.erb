@@ -7,14 +7,14 @@
   <%= f.hidden_field :content %>
 
   <div class="contact_form">
-    <p>タイトル</p>
-    <div><%= @contact.name %></div>
-    <p>メールアドレス</p>
-    <div><%= @contact.email %></div>
-    <p>内容</p>
-    <div><%= @contact.content %></div>
 
-    <div><%= f.submit '送信する'%></div>
+    <div>name: <%= @contact.name %></div>
+
+    <div>email: <%= @contact.email %></div>
+
+    <div>content: <%= @contact.content %></div>
+
+    <div><%= f.submit '送信する', class: "btn btn-default"%></div>
   </div>
 <% end %>
 
@@ -23,6 +23,6 @@
   <%= f.hidden_field :email %>
   <%= f.hidden_field :content %>
   <div>
-    <%= f.submit 'もどる', name: 'back'%>
+    <%= f.submit 'もどる', name: 'back', class: "btn btn-default"%>
   </div>
 <% end %>
