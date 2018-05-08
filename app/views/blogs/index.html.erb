@@ -26,8 +26,11 @@
               <%= link_to 'Edit', edit_blog_path(blog.id), class: 'btn btn-info' %>|
               <%= link_to 'Destroy', blog_path(blog.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
             <% end %>
+            <%= image_tag blog.user.image.url if blog.user.image.url.present? %>
           <% end %>
-          <div>投稿したユーザー:<%= blog.user.name %></div>
+          <div>
+            投稿したユーザー:<%= blog.user.name %>
+          </div>
         </div>
 
       </div>

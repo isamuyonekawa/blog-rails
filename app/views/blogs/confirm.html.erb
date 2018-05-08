@@ -12,6 +12,8 @@
       <div class="title">
         本文:<%= @blog.content %>
       </div>
+      <p><%= image_tag @blog.image.url if @blog.image.url.present? %></p>
+      <%= hidden_field_tag :"cache[image]", @blog.image.cache_name %>
       <div>
         <%= form.submit  "登録する", class: "btn btn-default confirm_btn" %>
       </div>
@@ -21,6 +23,7 @@
 <%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
+  <%= hidden_field_tag :"cache[image]",@blog.image.cache_name %>
   <div class="to_center">
     <%= form.submit "もどる", name: 'back', class: "btn btn-default confirm_btn" %>
   </div>

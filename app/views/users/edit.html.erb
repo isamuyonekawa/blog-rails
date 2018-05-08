@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Edit</h1>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
+          <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= form_with(model: @user, local: true) do |f| %>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.email_field :email, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :image %>
+          <%= image_tag(@user.image.url) if @user.image.url %>
+          <%= f.file_field :image, class: "btn btn-file btn-default" %>
+          <%= f.hidden_field :image_cache %>
+        </div>
+
+        <%= f.submit "Edit my account", class: "btn btn-default" %>
+      <% end %>
+
+      <%= link_to 'もどる', user_path(@user.id), class: 'btn btn-default' %>
+    </div>
+  </div>
+</div>

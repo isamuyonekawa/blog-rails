@@ -1,6 +1,8 @@
 <div class="to_center">
   <h1><%= @user.name %>のページ</h1>
   <p>メールアドレス: <%= @user.email %></p>
+  <p><%= image_tag @user.image.url if @user.image.url.present? %></p>
+  <p><%= link_to 'プロフィール編集', edit_user_path(@user.id), class: 'btn btn-info'%></p>
   <h1>お気に入り一覧</h1>
 </div>
 
@@ -23,6 +25,9 @@
       <% end %>
 
       <p><%= blog.created_at %></p>
+      <div class='blog-links'>
+        <%= link_to 'Show', blog_path(blog.id), class: 'btn btn-default' %>
+      </div>
 
       <div>
         投稿したユーザー:<%= blog.user.name %>

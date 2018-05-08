@@ -3,6 +3,7 @@
 <div class="to_center">
 <p>タイトル: <%= @blog.title %></p>
 <p>内容: <%= @blog.content %></p>
+<p><%= image_tag @blog.image.url if @blog.image.url.present? %></p>
 <%= link_to 'ブログ一覧へ戻る', blogs_path %>
 </div>
 
